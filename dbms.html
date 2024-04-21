@@ -1,0 +1,62 @@
+<html>
+    <head><h1><center>DBMS(Database Management System)</center></h1></head>
+    <body bgcolor="PINK">
+    <P> Database Management System is a software or technology used to manage data from a database. 
+        Some popular databases are MySQL, Oracle, MongoDB, etc. DBMS provides many operations e.g. creating 
+        a database, Storing in the database, updating an existing database, delete from the database. DBMS is
+         a system that enables you to store, modify and retrieve data in an organized way. It also provides security to the database.
+
+        In this Database Management System tutorial you’ll learn basic to advanced topics like 
+        ER model, Relational Model, Relation Algebra, Normalization, File Organization, etc.</P ><BR>
+            <p>           
+                <h2>What is Transaction?</h2> 
+A transaction is a collection of operations that performs a single logical function in a database application. Each transaction is a unit of both atomicity and consistency. Thus, we require that transactions do not violate any database consistency constraints. That is, if the database was consistent when a transaction started, the database must be consistent when the transaction successfully terminates. However, during the execution of a transaction, it may be necessary temporarily to allow inconsistency, since either the debit of A or the credit of B must be done before the other. This temporary inconsistency, although necessary, may lead to difficulty if a failure occurs.
+
+It is the programmer’s responsibility to define properly the various transactions, so that each preserves the consistency of the database. For example, the transaction to transfer funds from the account of department A to the account of department B could be defined to be composed of two separate programs: one that debits account A, and another that credits account B. The execution of these two programs one after the other will indeed preserve consistency. However, each program by itself does not transform the database from a consistent state to a new consistent state. Thus, those programs are not transactions.
+
+The concept of a transaction has been applied broadly in database systems and applications. While the initial use of transactions was in financial applications, the concept is now used in real-time applications in telecommunication, as well as in the management of long-duration activities such as product design or administrative workflows.
+
+
+            </p>
+            <p>
+             <h2>   A set of logically related operations is known as a transaction. The main operations of a transaction are:</h2><br>
+
+                Read(A): Read operations Read(A) or R(A) reads the value of A from the database and stores it in a buffer in the main memory.<br>
+                Write (A): Write operation Write(A) or W(A) writes the value back to the database from the buffer. <br>
+                (Note: It doesn’t always need to write it to a database back it just writes the changes to buffer this is the reason where dirty read comes into the picture) <br>
+                
+                <h2>Let us take a debit transaction from an account that consists of the following operations:</h2><br>
+                
+                R(A);<br>
+                A=A-1000;<br>
+                W(A);<br>
+                Assume A’s value before starting the transaction is 5000.<br>
+                
+                The first operation reads the value of A from the database and stores it in a buffer.<br>
+                the Second operation will decrease its value by 1000. So buffer will contain 4000.<br>
+                the Third operation will write the value from the buffer to the database. So A’s final value will be 4000.<br>
+                But it may also be possible that the transaction may fail after executing some of its operations. The failure can be because of hardware, software or power, etc. For example, if the debit transaction discussed above fails after executing operation 2, the value of A will remain 5000 in the database which is not acceptable by the bank. <br>To avoid this, Database has two important operations: <br>
+                
+                Commit: After all instructions of a transaction are successfully executed, the changes made by a transaction are made permanent in the database.<br>
+                Rollback: If a transaction is not able to execute all operations successfully, all the changes made by a transaction are undone.<br>
+
+            </p>
+            <div class="pagination"><center>
+                <a href="phpa.html">&laquo;</a>
+                <a href="html.html">1</a>
+                <a class="active" href="php.html">2</a>
+                <a href="javascript.html">3</a>
+                <a href="xml.html">4</a>
+                <a href="networking.html">5</a>
+                <a href="operating.html">6</a>
+                <a href="phpa.html">7</a>
+                <a href="dbms.html">8</a>
+                <a href="rdbms.html">9</a>
+                <a href="intro.html">10</a>
+                <a href="rdbms.html">&raquo;</a>
+            </center>
+              </div>
+              </body>
+              </html>
+            
+    </body>
